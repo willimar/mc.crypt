@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Easy Crypt</AssemblyName>
+    <ApplicationIcon />
+    <Win32Resource />
+    <Version>1.0.1</Version>
+    <Authors>Rocha, Willimar</Authors>
+    <Company>Rocha, Willimar MC</Company>
+    <Description>Simple lib to criptographer values.</Description>
+    <Copyright>Willimar Rocha MC © 2019</Copyright>
+    <PackageProjectUrl>https://github.com/willimar/mc.crypt</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/willimar/mc.crypt</RepositoryUrl>
+    <RepositoryType>GitHub repository</RepositoryType>
+    <PackageTags>Cryptography</PackageTags>
+    <NeutralLanguage></NeutralLanguage>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MCCertified.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+</Project>
