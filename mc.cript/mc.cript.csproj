@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Easy Crypt</AssemblyName>
+    <AssemblyName>EasyCrypt</AssemblyName>
     <ApplicationIcon />
     <Win32Resource />
     <Version>1.0.1</Version>
@@ -17,6 +17,11 @@
     <NeutralLanguage></NeutralLanguage>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>MCCertified.pfx</AssemblyOriginatorKeyFile>
+    <PackageId>EasyCrypt</PackageId>
+    <PackageReleaseNotes>Simple easy cryptography to my personal project.
+I don't recomend use in professional projects.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 </Project>
