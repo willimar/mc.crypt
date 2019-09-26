@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace mc.cript.tools
 {
     class Program
     {
+        static RSAParameters parameters = new RSACryptoServiceProvider(2048).ExportParameters(true);
+
         static void Main(string[] args)
         {
             Console.Clear();
@@ -26,6 +29,26 @@ namespace mc.cript.tools
                 Console.WriteLine("Touch text value.");
                 var value = Console.ReadLine();
                 Console.WriteLine(Cryptographer.Encrypt(value, password));
+            }
+            else if (input.Equals("3"))
+            {
+                Console.Clear();
+                Console.WriteLine("Criptographer Method.");
+                Console.WriteLine("Touch password.");
+                var password = Console.ReadLine();
+                Console.WriteLine("Touch text value.");
+                var value = Console.ReadLine();
+                Console.WriteLine(Cryptographer.ToRsa(value, parameters));
+            }
+            else if (input.Equals("4"))
+            {
+                Console.Clear();
+                Console.WriteLine("Criptographer Method.");
+                Console.WriteLine("Touch password.");
+                var password = Console.ReadLine();
+                Console.WriteLine("Touch text value.");
+                var value = Console.ReadLine();
+                Console.WriteLine(Cryptographer.FromRsa(value, parameters));
             }
             else if (input.Equals("0"))
             {

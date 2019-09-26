@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mc.cript", "mc.cript\mc.cri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mc.cript.tools", "mc.cript.tools\mc.cript.tools.csproj", "{40B4A967-71F5-48AC-890C-A415D1E1BEFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mc.crypt.form.tool", "mc.crypt.form.tool\mc.crypt.form.tool.csproj", "{6ECAB27E-79EB-4CD4-AFAB-F2BD009530B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{40B4A967-71F5-48AC-890C-A415D1E1BEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40B4A967-71F5-48AC-890C-A415D1E1BEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40B4A967-71F5-48AC-890C-A415D1E1BEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ECAB27E-79EB-4CD4-AFAB-F2BD009530B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ECAB27E-79EB-4CD4-AFAB-F2BD009530B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ECAB27E-79EB-4CD4-AFAB-F2BD009530B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ECAB27E-79EB-4CD4-AFAB-F2BD009530B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

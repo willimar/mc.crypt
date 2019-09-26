@@ -92,9 +92,43 @@ namespace mc.cript
             }
         }
 
+        public static RSAParameters GetParameters()
+        {
+            using(var rsa = new RSACryptoServiceProvider(2048))
+                return rsa.ExportParameters(true);
+        }
+
+        public static string ToRsa(string plainText, RSAParameters passPhrase)
+        {
+            using (var provider = new RSACryptoServiceProvider(2048))
+            {
+                provider.ImportParameters(passPhrase);
+
+                var data = Encoding.Unicode.GetBytes(plainText);
+                var cypher = provider.Encrypt(data, false);
+                return Convert.ToBase64String(cypher);
+            }
+        }
+
+        public static string FromRsa(string plainText, RSAParameters passPhrase)
+        {
+            using (var provider = new RSACryptoServiceProvider(2048))
+            {
+                var dataBytes = Convert.FromBase64String(plainText);
+                provider.ImportParameters(passPhrase);
+                var plaintext = provider.Decrypt(dataBytes, false);
+                return Encoding.Unicode.GetString(plaintext);
+            }
+        }
+
         public static string ToBase64(this string text)
         {
             return ToBase64(text, Encoding.UTF8);
+        }
+
+        public static string FromBase64(string text)
+        {
+            return FromBase64(text, Encoding.UTF8);
         }
 
         public static string ToBase64(this string text, Encoding encoding)
@@ -106,6 +140,17 @@ namespace mc.cript
 
             byte[] textAsBytes = encoding.GetBytes(text);
             return Convert.ToBase64String(textAsBytes);
+        }
+
+        public static string FromBase64(this string text, Encoding encoding)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return text;
+            }
+
+            byte[] textAsBytes = Convert.FromBase64String(text);
+            return encoding.GetString(textAsBytes);
         }
 
         public static bool TryParseBase64(this string text, out string decodedText)
