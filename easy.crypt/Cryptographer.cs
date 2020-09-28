@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace easy.crypt
+namespace System
 {
     public static class Cryptographer
     {
@@ -15,7 +14,7 @@ namespace easy.crypt
         // This constant determines the number of iterations for the password bytes generation function.
         private const int DerivationIterations = 1000;
 
-        public static string Encrypt(string plainText, string passPhrase)
+        public static string ToEncrypt(this string plainText, string passPhrase)
         {
             // Salt and IV is randomly generated each time, but is preprended to encrypted cipher text
             // so that the same Salt and IV values can be used when decrypting.  
@@ -53,7 +52,7 @@ namespace easy.crypt
             }
         }
 
-        public static string Decrypt(string cipherText, string passPhrase)
+        public static string ToDecrypt(this string cipherText, string passPhrase)
         {
             // Get the complete stream of bytes that represent:
             // [32 bytes of Salt] + [32 bytes of IV] + [n bytes of CipherText]
@@ -97,7 +96,7 @@ namespace easy.crypt
                 return rsa.ExportParameters(true);
         }
 
-        public static string ToRsa(string plainText, RSAParameters passPhrase)
+        public static string ToRsa(this string plainText, RSAParameters passPhrase)
         {
             using (var provider = new RSACryptoServiceProvider(2048))
             {
@@ -109,7 +108,7 @@ namespace easy.crypt
             }
         }
 
-        public static string FromRsa(string plainText, RSAParameters passPhrase)
+        public static string FromRsa(this string plainText, RSAParameters passPhrase)
         {
             using (var provider = new RSACryptoServiceProvider(2048))
             {
@@ -125,7 +124,7 @@ namespace easy.crypt
             return ToBase64(text, Encoding.UTF8);
         }
 
-        public static string FromBase64(string text)
+        public static string FromBase64(this string text)
         {
             return FromBase64(text, Encoding.UTF8);
         }
@@ -176,6 +175,32 @@ namespace easy.crypt
                 decodedText = null;
                 return false;
             }
+        }
+
+        public static string ToHash(this string[] values)
+        {
+            var result = string.Empty;
+
+            foreach (var item in values)
+            {
+                result += item;
+            }
+
+            return BitConverter.ToString(new SHA256Managed()
+                                .ComputeHash(Encoding.UTF8.GetBytes(result))).Replace("-", string.Empty);
+        }
+
+        public static string ToHash(this string values)
+        {
+            var result = string.Empty;
+
+            foreach (var item in values)
+            {
+                result += item;
+            }
+
+            return BitConverter.ToString(new SHA256Managed()
+                                .ComputeHash(Encoding.UTF8.GetBytes(result))).Replace("-", string.Empty);
         }
 
         private static byte[] Generate128BitsOfRandomEntropy()

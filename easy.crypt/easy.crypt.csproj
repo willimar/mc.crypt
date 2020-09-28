@@ -5,7 +5,7 @@
     <AssemblyName>EasyCrypt</AssemblyName>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>1.2.2.1</Version>
+    <Version>2.1.1.1</Version>
     <Authors>Rocha, Willimar</Authors>
     <Company>Rocha, Willimar MC</Company>
     <Description>Simple lib to criptographer values.</Description>
