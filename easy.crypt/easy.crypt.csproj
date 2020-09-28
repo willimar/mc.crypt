@@ -5,7 +5,7 @@
     <AssemblyName>EasyCrypt</AssemblyName>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>1.0.1</Version>
+    <Version>1.2.2.1</Version>
     <Authors>Rocha, Willimar</Authors>
     <Company>Rocha, Willimar MC</Company>
     <Description>Simple lib to criptographer values.</Description>
@@ -15,13 +15,21 @@
     <RepositoryType>GitHub repository</RepositoryType>
     <PackageTags>Cryptography</PackageTags>
     <NeutralLanguage></NeutralLanguage>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>MCCertified.pfx</AssemblyOriginatorKeyFile>
     <PackageId>EasyCrypt</PackageId>
-    <PackageReleaseNotes>Simple easy cryptography to my personal project.
-I don't recomend use in professional projects.</PackageReleaseNotes>
+    <PackageReleaseNotes>Simple easy cryptography to my personal project.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RootNamespace>easy.crypt</RootNamespace>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

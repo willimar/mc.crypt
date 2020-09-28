@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Security.Cryptography;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
-namespace mc.cript
+namespace easy.crypt
 {
     public static class Cryptographer
     {
